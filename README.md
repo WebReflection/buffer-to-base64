@@ -1,6 +1,6 @@
 # buffer-to-base64
 
-[![build status](https://github.com/WebReflection/buffer-to-base64/actions/workflows/node.js.yml/badge.svg)](https://github.com/WebReflection/buffer-to-base64/actions) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/buffer-to-base64/badge.svg?branch=main)](https://coveralls.io/github/WebReflection/buffer-to-base64?branch=main) [![CSP strict](https://webreflection.github.io/csp/strict.svg)](https://webreflection.github.io/csp/#-csp-strict)
+[![build status](https://github.com/WebReflection/buffer-to-base64/actions/workflows/node.js.yml/badge.svg)](https://github.com/WebReflection/buffer-to-base64/actions) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/buffer-to-base64/badge.svg?branch=main)](https://coveralls.io/github/WebReflection/buffer-to-base64?branch=main)
 
 A base64 encoder/decoder with `gzip` or `deflate` abilities.
 
