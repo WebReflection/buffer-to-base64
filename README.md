@@ -2,6 +2,9 @@
 
 [![build status](https://github.com/WebReflection/buffer-to-base64/actions/workflows/node.js.yml/badge.svg)](https://github.com/WebReflection/buffer-to-base64/actions) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/buffer-to-base64/badge.svg?branch=main)](https://coveralls.io/github/WebReflection/buffer-to-base64?branch=main)
 
+<sup>**Social Media Photo by [Belinda Fewings](https://unsplash.com/@bel2000a) on [Unsplash](https://unsplash.com/)**</sup>
+
+
 A base64 encoder/decoder with `gzip` or `deflate` abilities.
 
 ```js
