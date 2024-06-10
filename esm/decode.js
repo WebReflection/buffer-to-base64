@@ -6,8 +6,9 @@
  */
 export const decode = async (bota, format = 'deflate') => {
   const str = atob(bota);
-  const buffer = new Uint8Array(str.length);
-  for (let i = 0; i < str.length; i++)
+  const strLength = str.length;
+  const buffer = new Uint8Array(strLength);
+  for (let i = 0; i < strLength; i++)
     buffer[i] = str.charCodeAt(i);
   let response = new Blob([buffer]);
   if (format) {
@@ -16,4 +17,3 @@ export const decode = async (bota, format = 'deflate') => {
   }
   return await new Response(response).arrayBuffer();
 };
-  
