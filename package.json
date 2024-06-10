@@ -1,6 +1,6 @@
 {
   "name": "buffer-to-base64",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "./cjs/index.js",
   "scripts": {
     "build": "npm run cjs && npm run test",
@@ -8,7 +8,10 @@
     "coveralls": "c8 report --reporter=text-lcov | coveralls",
     "test": "c8 node test/index.js"
   },
-  "keywords": ["base64", "compression"],
+  "keywords": [
+    "base64",
+    "compression"
+  ],
   "author": "Andrea Giammarchi",
   "license": "MIT",
   "description": "A base64 encoder/decoder with gzip or deflate abilities",
