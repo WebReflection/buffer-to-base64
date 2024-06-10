@@ -1,0 +1,37 @@
+{
+  "name": "buffer-to-base64",
+  "version": "0.0.0",
+  "main": "./cjs/index.js",
+  "scripts": {
+    "build": "npm run cjs && npm run test",
+    "cjs": "ascjs --no-default esm cjs",
+    "coveralls": "c8 report --reporter=text-lcov | coveralls",
+    "test": "c8 node test/index.js"
+  },
+  "keywords": ["base64", "compression"],
+  "author": "Andrea Giammarchi",
+  "license": "MIT",
+  "description": "A base64 encoder/decoder with gzip or deflate abilities",
+  "devDependencies": {
+    "ascjs": "^6.0.3",
+    "c8": "^9.1.0",
+    "coveralls": "^3.1.1"
+  },
+  "module": "./esm/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./esm/index.js",
+      "default": "./cjs/index.js"
+    },
+    "./encode": {
+      "import": "./esm/encode.js",
+      "default": "./cjs/encode.js"
+    },
+    "./decode": {
+      "import": "./esm/decode.js",
+      "default": "./cjs/decode.js"
+    },
+    "./package.json": "./package.json"
+  }
+}
