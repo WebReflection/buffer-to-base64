@@ -1,3 +1,5 @@
+const VIEW_CHUNK_SIZE = 2000;
+
 /**
  * Given a generic buffer, optionally compress it and returns its `base64` representation.
  * @param {ArrayBuffer | Uint8Array} buffer a generic buffer to optionally compress and return as base64.
@@ -11,8 +13,9 @@ export const encode = async (buffer, format = 'deflate') => {
     response = response.stream().pipeThrough(stream);
   }
   const view = new Uint8Array(await new Response(response).arrayBuffer());
-  const out = [];
-  for (let i = 0; i < view.length; i += 2000)
-    out.push(String.fromCharCode(...view.subarray(i, i + 2000)));
-  return btoa(out.join(''));
+  let out = '';
+  const viewLength = view.length;
+  for (let i = 0; i < viewLength; i += VIEW_CHUNK_SIZE)
+    out += String.fromCharCode(...view.subarray(i, i + VIEW_CHUNK_SIZE));
+  return btoa(out);
 };
