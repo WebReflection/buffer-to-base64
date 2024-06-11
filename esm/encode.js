@@ -6,16 +6,17 @@
  */
 export const encode = async (buffer, format = 'deflate') => {
   for (var
-    { fromCharCode } = String,
     blob = new Blob([buffer]),
     res = format ?
       new Response(blob.stream().pipeThrough(new CompressionStream(format))) :
       blob
     ,
     view = new Uint8Array(await res.arrayBuffer()),
+    { fromCharCode } = String,
+    { length } = view,
     out = '',
     c = 2000,
-    i = 0; i < view.length; i += c
+    i = 0; i < length; i += c
   ) out += fromCharCode(...view.subarray(i, i + c));
   return btoa(out);
 };
