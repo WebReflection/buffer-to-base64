@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import test from './test.js';
 
-const buffer = readFileSync('./package.json');
+const buffer = readFileSync('./package-lock.json');
 
 await test(new Uint8Array(buffer).buffer, buffer.toString('base64'));
 

@@ -21,7 +21,7 @@ const response = stream(packed, { type: 'application/wasm' });
 
 // eventually returns the ArrayBuffer too (fast decoding)
 const arrayBuffer = await (await response).arrayBuffer();
-// `arrayBuffer` is a the same as `original`
+// `arrayBuffer` is the same as `original`
 ```
 
 This module goal is to simplify the embedding of *WASM* or other blobs within code as `base64` that can return the original array without bloating space on the file.

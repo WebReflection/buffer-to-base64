@@ -8,7 +8,7 @@
     import { encode } from '../esm/index.js';
     import test from './test.js';
 
-    const pkg = await (await fetch('../package.json')).arrayBuffer();
+    const pkg = await (await fetch('../package-lock.json')).arrayBuffer();
     await test(pkg, await encode(pkg, ''));
     document.body.textContent = '✅';
   </script>

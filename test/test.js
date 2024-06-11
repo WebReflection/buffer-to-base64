@@ -16,14 +16,20 @@ export default (pkg, b64) => Promise.all([
       base64 === b64,
       'encoding with no compression'
     );
-  
+
+    console.time('no-comp decoding');
     let buffer = await decode(base64, '');
+    console.timeEnd('no-comp decoding');
+
     assert(
       equals(pkg, buffer),
       'decoding works'
     );
-  
+
+    console.time('no-comp streaming');
     buffer = await (await stream(base64, {format: ''})).arrayBuffer();
+    console.timeEnd('no-comp streaming');
+
     assert(
       equals(pkg, buffer),
       'non-compressed streaming works'
@@ -35,13 +41,20 @@ export default (pkg, b64) => Promise.all([
       base64 !== b64,
       'compression works'
     );
+
+    console.time('comp decoding');
     let buffer = await decode(base64);
+    console.timeEnd('comp decoding');
+
     assert(
       equals(pkg, buffer),
       'decompression works'
     );
-  
+
+    console.time('comp streaming');
     buffer = await (await stream(base64)).arrayBuffer();
+    console.timeEnd('comp streaming');
+
     assert(
       equals(pkg, buffer),
       'compressed streaming works'
