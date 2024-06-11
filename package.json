@@ -34,6 +34,10 @@
       "import": "./esm/decode.js",
       "default": "./cjs/decode.js"
     },
+    "./stream": {
+      "import": "./esm/stream.js",
+      "default": "./cjs/stream.js"
+    },
     "./package.json": "./package.json"
   },
   "repository": {

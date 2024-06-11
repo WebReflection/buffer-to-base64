@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>buffer-to-base64</title>
+  <script type="module">
+    import { encode } from '../esm/index.js';
+    import test from './test.js';
+
+    const pkg = await (await fetch('../package.json')).arrayBuffer();
+    await test(pkg, await encode(pkg, ''));
+    document.body.textContent = '✅';
+  </script>
+</head>
+</html>

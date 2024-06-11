@@ -8,13 +8,20 @@
 A base64 encoder/decoder with `gzip` or `deflate` abilities.
 
 ```js
-import { encode, decode } from 'buffer-to-base64';
+import { encode, decode, stream } from 'buffer-to-base64';
 
 // return a base64 string after compression
 const packed = await encode(buffer);
 
 // return an ArrayBuffer after decompression
 const original = await decode(packed);
+
+// initialize a WebAssembly module streaming
+const response = stream(packed, { type: 'application/wasm' });
+
+// eventually returns the ArrayBuffer too (fast decoding)
+const arrayBuffer = await (await response).arrayBuffer();
+// `arrayBuffer` is a the same as `original`
 ```
 
 This module goal is to simplify the embedding of *WASM* or other blobs within code as `base64` that can return the original array without bloating space on the file.
