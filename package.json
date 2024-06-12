@@ -17,7 +17,7 @@
   "description": "A base64 encoder/decoder with gzip or deflate abilities",
   "devDependencies": {
     "ascjs": "^6.0.3",
-    "c8": "^9.1.0"
+    "c8": "^10.1.1"
   },
   "module": "./esm/index.js",
   "type": "module",
