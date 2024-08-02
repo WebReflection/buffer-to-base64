@@ -1,6 +1,6 @@
 {
   "name": "buffer-to-base64",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "./cjs/index.js",
   "scripts": {
     "build": "npm run cjs && npm run test",
@@ -16,6 +16,7 @@
   "license": "MIT",
   "description": "A base64 encoder/decoder with gzip or deflate abilities",
   "devDependencies": {
+    "@ungap/compression-stream": "^0.1.0",
     "ascjs": "^6.0.3",
     "c8": "^10.1.2"
   },
